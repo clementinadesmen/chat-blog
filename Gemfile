@@ -8,16 +8,16 @@ gem "rails", "~> 7.0.2", ">= 7.0.2.4"
 gem 'devise'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
-
+gem 'bootstrap', '~> 5.2', '>= 5.2.3'
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
-
+gem 'jquery-rails'
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
-
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
-
+gem 'bootstrap-will_paginate', '1.0.0'
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 

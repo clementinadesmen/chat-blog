@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
     before_action :authenticate_user!
-    before_action :authorize_user, only: [:edit]
+    before_action :require_admin!, only: [:edit, :update, :destroy]
 
     def index
         @articles = Article.paginate(page: params[:page], per_page: 5)
@@ -47,5 +47,11 @@ class ArticlesController < ApplicationController
     private
         def article_params
             params.require(:article).permit(:titre,:contenu)
+        end
+
+        def require_admin!
+            unless current_user.admin?
+              redirect_to root_path, alert: "You are not authorized to access this page."
+            end
         end
 end
